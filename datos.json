@@ -1,0 +1,202 @@
+[
+  {
+    "nombre": "Aelar",
+    "clase": "Mago",
+    "experiencia": 1200,
+    "healthPoints": 80,
+    "mana": 200,
+    "velocidad": 60,
+    "fuerza": 40,
+    "habilidades": ["Bola de fuego", "Escudo arcano", "Teletransporte"]
+  },
+  {
+    "nombre": "Thorin",
+    "clase": "Guerrero",
+    "experiencia": 1500,
+    "healthPoints": 180,
+    "mana": 30,
+    "velocidad": 50,
+    "fuerza": 120,
+    "habilidades": ["Golpe pesado", "Defensa total", "Grito de guerra"]
+  },
+  {
+    "nombre": "Lyra",
+    "clase": "Arquero",
+    "experiencia": 1100,
+    "healthPoints": 100,
+    "mana": 60,
+    "velocidad": 120,
+    "fuerza": 70,
+    "habilidades": ["Disparo preciso", "Lluvia de flechas", "Evasión"]
+  },
+  {
+    "nombre": "Kael",
+    "clase": "Explorador",
+    "experiencia": 900,
+    "healthPoints": 110,
+    "mana": 50,
+    "velocidad": 130,
+    "fuerza": 60,
+    "habilidades": ["Sigilo", "Rastreo", "Emboscada"]
+  },
+  {
+    "nombre": "Eldrin",
+    "clase": "Mago",
+    "experiencia": 1400,
+    "healthPoints": 85,
+    "mana": 220,
+    "velocidad": 55,
+    "fuerza": 35,
+    "habilidades": ["Rayo", "Congelar", "Ilusión"]
+  },
+  {
+    "nombre": "Brakka",
+    "clase": "Guerrero",
+    "experiencia": 1700,
+    "healthPoints": 200,
+    "mana": 20,
+    "velocidad": 40,
+    "fuerza": 130,
+    "habilidades": ["Hachazo", "Bloqueo", "Carga"]
+  },
+  {
+    "nombre": "Sylvan",
+    "clase": "Arquero",
+    "experiencia": 1000,
+    "healthPoints": 95,
+    "mana": 70,
+    "velocidad": 125,
+    "fuerza": 65,
+    "habilidades": ["Flecha venenosa", "Disparo rápido", "Salto ágil"]
+  },
+  {
+    "nombre": "Rynn",
+    "clase": "Explorador",
+    "experiencia": 950,
+    "healthPoints": 105,
+    "mana": 40,
+    "velocidad": 135,
+    "fuerza": 55,
+    "habilidades": ["Camuflaje", "Trampa", "Ataque sorpresa"]
+  },
+  {
+    "nombre": "Zarek",
+    "clase": "Mago",
+    "experiencia": 1600,
+    "healthPoints": 75,
+    "mana": 250,
+    "velocidad": 50,
+    "fuerza": 30,
+    "habilidades": ["Tormenta eléctrica", "Escudo mágico", "Portal"]
+  },
+  {
+    "nombre": "Grom",
+    "clase": "Guerrero",
+    "experiencia": 1800,
+    "healthPoints": 210,
+    "mana": 25,
+    "velocidad": 45,
+    "fuerza": 140,
+    "habilidades": ["Martillazo", "Resistencia", "Provocar"]
+  },
+  {
+    "nombre": "Elora",
+    "clase": "Arquero",
+    "experiencia": 1200,
+    "healthPoints": 100,
+    "mana": 80,
+    "velocidad": 130,
+    "fuerza": 75,
+    "habilidades": ["Disparo doble", "Flecha explosiva", "Rodar"]
+  },
+  {
+    "nombre": "Dax",
+    "clase": "Explorador",
+    "experiencia": 980,
+    "healthPoints": 115,
+    "mana": 45,
+    "velocidad": 140,
+    "fuerza": 60,
+    "habilidades": ["Sigilo total", "Marca", "Ataque crítico"]
+  },
+  {
+    "nombre": "Merlin",
+    "clase": "Mago",
+    "experiencia": 2000,
+    "healthPoints": 90,
+    "mana": 300,
+    "velocidad": 60,
+    "fuerza": 50,
+    "habilidades": ["Meteorito", "Tiempo lento", "Escudo supremo"]
+  },
+  {
+    "nombre": "Ragnar",
+    "clase": "Guerrero",
+    "experiencia": 1900,
+    "healthPoints": 220,
+    "mana": 35,
+    "velocidad": 55,
+    "fuerza": 150,
+    "habilidades": ["Furia", "Golpe giratorio", "Intimidar"]
+  },
+  {
+    "nombre": "Faye",
+    "clase": "Arquero",
+    "experiencia": 1300,
+    "healthPoints": 105,
+    "mana": 85,
+    "velocidad": 135,
+    "fuerza": 80,
+    "habilidades": ["Disparo silencioso", "Trampa de flechas", "Velocidad"]
+  },
+  {
+    "nombre": "Nox",
+    "clase": "Explorador",
+    "experiencia": 1000,
+    "healthPoints": 110,
+    "mana": 50,
+    "velocidad": 145,
+    "fuerza": 65,
+    "habilidades": ["Invisibilidad", "Veneno", "Ataque rápido"]
+  },
+  {
+    "nombre": "Alzar",
+    "clase": "Mago",
+    "experiencia": 1550,
+    "healthPoints": 85,
+    "mana": 240,
+    "velocidad": 58,
+    "fuerza": 42,
+    "habilidades": ["Fuego oscuro", "Control mental", "Barrera"]
+  },
+  {
+    "nombre": "Borin",
+    "clase": "Guerrero",
+    "experiencia": 1650,
+    "healthPoints": 205,
+    "mana": 28,
+    "velocidad": 48,
+    "fuerza": 135,
+    "habilidades": ["Golpe brutal", "Defensa férrea", "Empuje"]
+  },
+  {
+    "nombre": "Kira",
+    "clase": "Arquero",
+    "experiencia": 1250,
+    "healthPoints": 98,
+    "mana": 75,
+    "velocidad": 132,
+    "fuerza": 72,
+    "habilidades": ["Disparo curvo", "Triple flecha", "Esquivar"]
+  },
+  {
+    "nombre": "Vale",
+    "clase": "Explorador",
+    "experiencia": 970,
+    "healthPoints": 108,
+    "mana": 48,
+    "velocidad": 138,
+    "fuerza": 58,
+    "habilidades": ["Sigilo veloz", "Rastreo avanzado", "Ataque sorpresa"]
+  }
+]
