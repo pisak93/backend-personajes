@@ -1,20 +1,13 @@
 const express = require("express");
 const cors = require("cors");
-const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const personajeRouter = require("./v1/routes/personajeRouters");
+
+const app = require("./app");
+
+const mongoose = require("mongoose");
 
 dotenv.config();
 
-const app = express();
-
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({extended:true}));
-
-app.get("/",function(req,res){
-    res.send("API REST DE PERSONAJES");
-});
 
 app.listen(process.env.PORT,function(){
 console.log("CONTECTADO AL PUERTO: "+process.env.PORT);
@@ -34,4 +27,3 @@ connection
 
 });
 
-app.use("/api/v1/personajes",personajeRouter);
