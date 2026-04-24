@@ -2,45 +2,46 @@ const mongoose = require("mongoose");
 require("../models/PersonajeSchema.js");
 const Personaje = mongoose.model("Personaje");
 
-const getAllPersonajes = async function(){
-    const personajes = await Personaje.find();
-    return personajes;
+const getAllPersonajes = async function () {
+  const personajes = await Personaje.find();
+  return personajes;
 }
 
-const getAllPersonajesPropiedad = async function(propiedad){
-    const personajes = await Personaje.find().select("nombre "+propiedad);
-    return personajes;
+const getAllPersonajesPropiedad = async function (propiedad) {
+  const personajes = await Personaje.find().select("nombre " + propiedad);
+  return personajes;
 
 }
 
 
-const getPersonajesFiltro = async function (queryParams)  {
+const getPersonajesFiltro = async function (queryParams) {
   const filtros = {};
-  var selectFields= "";
+  var selectFields = "";
   console.log(queryParams);
-  if (Object.keys(queryParams).length>0){
-    console.log("ENTRA AQUI");
+
+  if (Object.keys(queryParams).length > 0) {
+
     selectFields += "nombre";
 
   }
 
   if (queryParams.clase) {
     filtros.clase = queryParams.clase;
-    selectFields+=" clase";
+    selectFields += " clase";
   }
 
 
   if (queryParams.expMin || queryParams.expMax) {
     filtros.experiencia = {};
-    if (queryParams.expMin){
-         filtros.experiencia.$gte = Number(queryParams.expMin);
+    if (queryParams.expMin) {
+      filtros.experiencia.$gte = Number(queryParams.expMin);
 
-        }
+    }
 
-    if (queryParams.expMax){
-         filtros.experiencia.$lte = Number(queryParams.expMax)
-        }
-        selectFields+=" experiencia";
+    if (queryParams.expMax) {
+      filtros.experiencia.$lte = Number(queryParams.expMax)
+    }
+    selectFields += " experiencia";
   }
 
 
@@ -52,7 +53,7 @@ const getPersonajesFiltro = async function (queryParams)  {
     if (queryParams.fuerzaMax) {
       filtros.fuerza.$lte = Number(queryParams.fuerzaMax);
     }
-    selectFields+=" fuerza";
+    selectFields += " fuerza";
   }
 
   if (queryParams.velocidadMin || queryParams.velocidadMax) {
@@ -63,9 +64,9 @@ const getPersonajesFiltro = async function (queryParams)  {
     if (queryParams.velocidadMax) {
       filtros.velocidad.$lte = Number(queryParams.velocidadMax);
     }
-    selectFields+=" velocidad";
+    selectFields += " velocidad";
   }
-  if(queryParams.HPMin || queryParams.HPMax){
+  if (queryParams.HPMin || queryParams.HPMax) {
     filtros.healthPoints = {};
     if (queryParams.HPMin) {
       filtros.healthPoints.$gte = Number(queryParams.HPMin);
@@ -73,20 +74,36 @@ const getPersonajesFiltro = async function (queryParams)  {
     if (queryParams.HPMax) {
       filtros.healthPoints.$lte = Number(queryParams.HPMax);
     }
-    selectFields+=" healthPoints";
+    selectFields += " healthPoints";
 
   }
-  
 
-      const personajes = await Personaje.find(filtros).select(selectFields);
-    return personajes;
+
+  if (queryParams.habilidad) {
+    filtros.habilidades = {};
+    filtros.habilidades.$regex = queryParams.habilidad;
+    filtros.habilidades.$options = "i";
+
+    selectFields += " habilidades";
+  }
+
+  console.log("Filtros aplicados: ", filtros);
+  //const personajes = await Personaje.find(filtros).select(selectFields);
+  const personajes = await Personaje.find(filtros);
+  return personajes;
 
 };
+
+const getAllClases = async function () {
+  const clases = await Personaje.distinct("clase");
+  return clases;
+}
 
 
 
 module.exports = {
-    getAllPersonajes,
-    getAllPersonajesPropiedad,
-    getPersonajesFiltro
+  getAllPersonajes,
+  getAllPersonajesPropiedad,
+  getPersonajesFiltro,
+  getAllClases
 };

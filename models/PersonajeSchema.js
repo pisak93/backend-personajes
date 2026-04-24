@@ -11,7 +11,7 @@ const personajeSchema = new mongoose.Schema(
              enum: ["Mago", "Guerrero", "Arquero", "Explorador"],
             required: true
         },
-  experiencia: {
+         experiencia: {
     type: Number,
     default: 0
   },
