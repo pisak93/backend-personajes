@@ -5,8 +5,8 @@ const personajeController = require("../../controllers/personajeController")
 router
     .get("/",personajeController.getAllPersonajes)
     .get("/filtro",personajeController.getPersonajesFiltro)
-    .post("/",personajeController.crearPersonaje)
-    .delete("/:id",personajeController.eliminarPersonaje)
+    .get("/clases",personajeController.getAllClases)
+    .get("/:propiedad",personajeController.getAllPersonajesPropiedad)
 
 
 

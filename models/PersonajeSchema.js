@@ -31,7 +31,7 @@ const personajeSchema = new mongoose.Schema(
     type: Number,
     required: true
   },
-  habildades:{
+  habilidades:{
     type:[String]
   }
     },{collection:"personajes"}

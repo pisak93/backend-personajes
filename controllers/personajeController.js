@@ -19,61 +19,71 @@ const getAllPersonajes = async function(req,res){
     
 }
 
-const getAllPersonajesPropiedad = async function(req,res){
-    const propiedad = req.params.propiedad;
-    console.log("Propiedad solicitada: "+propiedad);
-    try {
-        const personajes = await personajesService.getAllPersonajesPropiedad(propiedad);
-        
-       res.status(200).json({
-         message: "Propiedad: "+propiedad+" de Personajes obtenidos correctamente",
-         data: personajes});
-        
-    } catch (error) {
-         res.status(500).json({
-    message: "Error al obtener los personajes",
-    error: error.message
-  });
-    }
-}
-
 const getPersonajesFiltro = async function(req,res){
-  const queryParams = req.query;
-  try {
-        const personajes = await personajesService.getPersonajesFiltro(queryParams);
-       
-       res.status(200).json({
-         message: "Personajes obtenidos correctamente",
-         data: personajes});
+const queryParams = req.query
 
+  try{
+
+    const personajes = await personajesService.getPersonajesFiltro(queryParams);
         
-    } catch (error) {
-         res.status(500).json({
-    message: "Error al obtener los personajes",
+    res.status(200).json({
+    message: "Personajes con filtros obtenidos correctamente",
+    data: personajes
+  });
+
+  }
+
+  catch(error){
+   res.status(500).json({
+    message: "Error al obtener los personajes con Filtros",
     error: error.message
   });
-    }
+  }
 }
 
-const getAllClases = async function(req,res){
+const crearPersonaje = async function (req,res){
+  const datos = req.body;
+  console.log(datos);
+
+  try{
+      const personaje = await personajesService.crearPersonaje(datos);
+
+       res.status(200).json({
+    message: "Personaje creado correctamente",
+    data: personaje
+  });
+  }
+  catch(error){
+    res.status(500).json({
+    message: "Error al crear el personaje",
+    error: error.message
+  });
+  }
+
+}
+
+const eliminarPersonaje = async function(req,res){
+
+  const id = req.params.id;
   try {
-    const propiedades = await personajesService.getAllClases();
-    res.status(200).json({
-      message: "Propiedades obtenidas correctamente",
-      data: propiedades
-    });
+    const personaje = await personajesService.eliminarPersonaje(id);
+      res.status(200).json({
+    message: "Personaje eliminado correctamente",
+    data: personaje
+  });
     
   } catch (error) {
-    res.status(500).json({
-      message: "Error al obtener las propiedades",
-      error: error.message
-    });
+        res.status(500).json({
+    message: "Error al eliminar el personaje",
+    error: error.message
+  });
   }
 }
 
 module.exports = {
   getAllPersonajes,
-    getAllPersonajesPropiedad,
-    getPersonajesFiltro,
-    getAllClases
+  getPersonajesFiltro,
+  crearPersonaje,
+  eliminarPersonaje
+   
 };
